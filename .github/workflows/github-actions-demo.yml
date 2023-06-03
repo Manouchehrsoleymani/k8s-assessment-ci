@@ -3,7 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 env:
   PROJECT1: manouchehrsolamani
-  IMAGE: appv1
+  IMAGE1: appv1
+  IMAGE2: appv2
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
