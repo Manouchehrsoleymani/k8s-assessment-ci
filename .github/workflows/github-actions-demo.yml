@@ -36,7 +36,8 @@ jobs:
         with:
           context: appv2
           # push: true
-          tags: ${{ env.PROJECT }}/${{ env.IMAGE2 }}:${{ github.ref }}:${{ github.sha }}
+          tags: appv2:${{ github.sha }}
+          # tags: ${{ env.PROJECT }}/${{ env.IMAGE2 }}:${{ github.ref }}:${{ github.sha }}
 
       - name: Scan Dockerfile using Checkov
         continue-on-error: true
