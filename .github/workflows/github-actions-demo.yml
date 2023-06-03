@@ -26,7 +26,7 @@ jobs:
       - name: Build container image
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: appv1
           # push: true
           tags: appv1:${{ github.sha }}
           # tags: ${{ env.PROJECT }}/${{ env.IMAGE1 }}:${{ github.ref }}:${{ github.sha }}
@@ -34,7 +34,7 @@ jobs:
       - name: Build container image
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: appv2
           # push: true
           tags: ${{ env.PROJECT }}/${{ env.IMAGE2 }}:${{ github.ref }}:${{ github.sha }}
 
