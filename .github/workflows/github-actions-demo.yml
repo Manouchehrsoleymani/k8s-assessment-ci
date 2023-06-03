@@ -2,7 +2,7 @@ name: GitHub Actions for Assessment of Trivago Co.
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 env:
-  PROJECT1: trivago
+  PROJECT1: manouchehrsolamani
   IMAGE: appv1
 jobs:
   Explore-GitHub-Actions:
@@ -23,20 +23,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Build container image
         uses: docker/build-push-action@v4
         with:
           context: appv1
-          # push: true
-          tags: appv1:${{ github.sha }}
+          push: true
+          tags: ${{ env.PROJECT }}/${{ env.IMAGE1 }}:${{ github.sha }}
           # tags: ${{ env.PROJECT }}/${{ env.IMAGE1 }}:${{ github.ref }}:${{ github.sha }}
       
       - name: Build container image
         uses: docker/build-push-action@v4
         with:
           context: appv2
-          # push: true
-          tags: appv2:${{ github.sha }}
+          push: true
+          tags: ${{ env.PROJECT }}/${{ env.IMAGE2 }}:${{ github.sha }}
           # tags: ${{ env.PROJECT }}/${{ env.IMAGE2 }}:${{ github.ref }}:${{ github.sha }}
 
       - name: Scan Dockerfile using Checkov
@@ -49,8 +55,4 @@ jobs:
           quiet: true 
           container_user: 1000
       
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+      
