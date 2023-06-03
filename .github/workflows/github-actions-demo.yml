@@ -2,7 +2,7 @@ name: GitHub Actions for Assessment of Trivago Co.
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 env:
-  PROJECT1: manouchehrsolamani
+  PROJECT: manouchehrsolamani
   IMAGE1: appv1
   IMAGE2: appv2
 jobs:
