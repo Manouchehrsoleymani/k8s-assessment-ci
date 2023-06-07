@@ -38,4 +38,4 @@ jobs:
         with:
           context: appv1
           push: true
-          tags: ${{ env.REG_ACCOUNT }}/${{ env.PROJECT }}:${{ github.sha }}
+          tags: ${{ env.REG_ACCOUNT }}/${{ env.PROJECT }}:${{ github.sha }} 
