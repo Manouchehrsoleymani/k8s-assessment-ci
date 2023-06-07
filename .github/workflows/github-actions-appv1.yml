@@ -5,7 +5,7 @@ on:
     tags:
     - "*"
     paths:
-    - appv1/*
+    - appv1
 env:
   REG_ACCOUNT: manouchehrsolamani
   PROJECT: trivago
