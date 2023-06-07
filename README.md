@@ -1,4 +1,4 @@
-# Distribution traffice assessment-CI
+# Distribution traffic assessment-CI
 In this repository, we are going to **develop**  a new versions of the application and **build** the Image then push it into **Docker hub** registry
 ## How it works
 The project has an index.html file and content includes:
